@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ga.capitalmgmtplatform.mapper.AccountInfoDao">
+    <insert id="add" parameterType="com.ga.capitalmgmtplatform.pojo.AccountInfo" >
+        insert into accountinfo (subjectcode ,abbrname ,accdirect,accnature ,acctype,account,lastnum,accname
+        manager,authorizer,banknum,bankname,bankaddress,bankphone)
+        values (#{subjectCode},#{abbrName},#{accDirect},#{accNature},#{accType},#{account},#{lastNum},#{accName},
+        #{manager},#{authorizer},#{bankNum},#{bankName},#{bankAddress},#{bankPhone})
+    </insert>
+
+    <delete id="delete" parameterType="com.ga.capitalmgmtplatform.pojo.AccountInfo" >
+        delete from accountinfo where id= #{id}
+    </delete>
+
+    <select id="get" parameterType="int" resultType="com.ga.capitalmgmtplatform.pojo.AccountInfo">
+        select * from accountinfo where id= #{id}
+    </select>
+
+    <update id="update" parameterType="com.ga.capitalmgmtplatform.pojo.AccountInfo" >
+        update accountinfo set subjectcode=#{subjectCode},abbrname=#{abbrName},accdirect=#{accDirect},
+         accnature=#{accNature} ,acctype=#{accType},account=#{account},lastnum=#{lastNum},accname=#{accName},
+          manager=#{manager},authorizer=#{authorizer},banknum=#{bankNum},bankname=#{bankName},
+           bankaddress=#{bankAddress},bankphone=#{bankPhone} where id=#{id}
+    </update>
+    <select id="list" resultType="com.ga.capitalmgmtplatform.pojo.AccountInfo">
+        select * from  accountinfo
+    </select>
+
+    <select id="getByCode" parameterType="string" resultType="com.ga.capitalmgmtplatform.pojo.AccountInfo">
+        select * from  accountinfo where subjectcode = #{code}
+    </select>
+
+    <select id="getById" resultType="com.ga.capitalmgmtplatform.pojo.AccountInfo">
+        select * from  accountinfo
+        where status = 0
+    <if test="id != 1 and id != 5">
+         and managerid = #{id}
+        </if>
+    </select>
+</mapper>
