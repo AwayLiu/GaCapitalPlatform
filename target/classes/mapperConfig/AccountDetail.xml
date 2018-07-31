@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ga.capitalmgmtplatform.mapper.AccountDetailDao">
+    <insert id="add" parameterType="java.util.List" >
+        insert ignore  into accountdetail
+        (accnum,balancedepart,transdate,debitamount,creditamount,balance,
+        reciprocalaccount,reciprocalname,outorin,iscash,tradesummary,summary,createdate,createuser)
+        values
+        <foreach collection="list" item="params" index="index"
+                 separator=",">
+            (
+            #{params.accNum},
+            #{params.balanceDepart},
+            #{params.transDate},
+            #{params.debitAmount},
+            #{params.creditAmount},
+            #{params.balance},
+            #{params.reciprocalAccount},
+            #{params.reciprocalName},
+            #{params.outOrIn},
+            #{params.isCash},
+            #{params.tradeSummary},
+            #{params.summary},
+            #{params.createDate},
+            #{params.createUser}
+            )
+        </foreach>
+    </insert>
+    
+    <select id="getDetailsByDateAndAccnum" resultType="com.ga.capitalmgmtplatform.pojo.AccountDetail">
+        select * from accountdetail where transdate=#{date} and accnum=#{accNum}
+    </select>
+
+    <select id="getLastDetailsByAccnum" resultType="com.ga.capitalmgmtplatform.pojo.AccountDetail">
+        select * from accountdetail where accnum=#{accNum} and transdate=
+        (select MAX(transdate) from accountdetail where accnum=#{accNum})
+    </select>
+
+    <select id="getDetailsByDatesAndAccnum" resultType="com.ga.capitalmgmtplatform.pojo.AccountDetail">
+        select * from accountdetail where transdate &gt;= #{dtFrom} and transdate &lt;= #{dtTo} and accnum=#{accNum}
+    </select>
+
+    <select id="getBalanceDetailsByUserId" resultType="com.ga.capitalmgmtplatform.pojo.AccountBalanceInfo">
+        select a.bankname,a.account as accnum,a.lastnum,b.balance,b.transdate as updatedate from accountinfo a
+        LEFT JOIN (select * from accountdetail where id in( select max(id) from accountdetail group by accnum) ) b on a.account =b.accnum
+        where a.status = 0
+        <if test="id != 1 and id != 5">
+              and a.managerid=#{id}
+          </if>
+    </select>
+</mapper>
