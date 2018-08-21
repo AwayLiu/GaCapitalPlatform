@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="res/img/galogo.png">
+
+    <title>广安财务管理手册</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="res/css/bootstrap.min.css" rel="stylesheet">
+    <link href="res/css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="res/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="res/css/style.css" rel="stylesheet">
+    <link href="res/css/style-responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="res/css/cwsc-two.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+    <script src="res/js/html5shiv.js"></script>
+    <script src="res/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<section id="container">
+    <!--头部 start-->
+    <header class="header white-bg">
+        <div class="sidebar-toggle-box">
+            <div data-original-title="" data-placement="right" class="icon-reorder tooltips"></div>
+        </div>
+        <!--logo start-->
+        <a href="#" class="logo"><span>会计基础工作规范:票据类</span></a>
+        <!--logo end-->
+        <div class="top-nav ">
+            <ul class="nav pull-right top-menu">
+                <li><a th:href="@{/index}"><i class="icon-key"></i>回到主页</a></li>
+            </ul>
+        </div>
+    </header>
+    <!--头部 end-->
+    <aside>
+        <div id="sidebar" class="nav-collapse ">
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="icon-laptop"></i>
+                        <span>第一部分:会计核算办法</span>
+                    </a>
+                    <ul class="sub">
+                        <li class="sub-menu">
+                            <a th:href="@{/FinancialManual(fid=1,sid=1)}">第一条 财务报表的编制基础</a>
+                            <ul class="sub">
+                                <li><a th:href="@{/FinancialManual#a(fid=1,sid=1)}">1.1 财务报表的编制基础</a></li>
+                                <li><a th:href="@{/FinancialManual#b(fid=1,sid=1)}">1.2 持续经营</a></li>
+                                <li><a th:href="@{/FinancialManual#c(fid=1,sid=1)}">1.3 记账基础</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a th:href="@{/FinancialManual(fid=1,sid=2)}">第二条 重要会计政策、会计估计</a>
+                            <ul class="sub">
+                                <li><a th:href="@{/FinancialManual#a(fid=1,sid=2)}">2.1 遵循企业会计准则的声明</a></li>
+                                <li><a th:href="@{/FinancialManual#b(fid=1,sid=2)}">2.2 会计期间</a></li>
+                                <li><a th:href="@{/FinancialManual#c(fid=1,sid=2)}">2.3 记账本位币</a></li>
+                                <li><a th:href="@{/FinancialManual#d(fid=1,sid=2)}">2.4 同一控制下和非同一控制下企业合并的会计处理方法</a></li>
+                                <li><a th:href="@{/FinancialManual#e(fid=1,sid=2)}">2.5 合并财务报表的编制方法</a></li>
+                                <li><a th:href="@{/FinancialManual#f(fid=1,sid=2)}">2.6 合营安排分类及共同经营会计处理方法</a></li>
+                                <li><a th:href="@{/FinancialManual#g(fid=1,sid=2)}">2.7 现金及现金等价物的确定标准</a></li>
+                                <li><a th:href="@{/FinancialManual#h(fid=1,sid=2)}">2.8 金融工具包括金融资产、金融负债和权益工具</a></li>
+                                <li><a th:href="@{/FinancialManual#i(fid=1,sid=2)}">2.9 应收账款</a></li>
+                                <li><a th:href="@{/FinancialManual#j(fid=1,sid=2)}">2.10 存货</a></li>
+                                <li><a th:href="@{/FinancialManual#k(fid=1,sid=2)}">2.11 长期股权投资</a></li>
+                                <li><a th:href="@{/FinancialManual#l(fid=1,sid=2)}">2.12 固定资产</a></li>
+                                <li><a th:href="@{/FinancialManual#m(fid=1,sid=2)}">2.13 在建工程</a></li>
+                                <li><a th:href="@{/FinancialManual#n(fid=1,sid=2)}">2.14 生物资产</a></li>
+                                <li><a th:href="@{/FinancialManual#o(fid=1,sid=2)}">2.15 无形资产与开发支出</a></li>
+                                <li><a th:href="@{/FinancialManual#p(fid=1,sid=2)}">2.16 长期资产减值</a></li>
+                                <li><a th:href="@{/FinancialManual#q(fid=1,sid=2)}">2.17 长期待摊费用</a></li>
+                                <li><a th:href="@{/FinancialManual#r(fid=1,sid=2)}">2.18 职工薪酬</a></li>
+                                <li><a th:href="@{/FinancialManual#s(fid=1,sid=2)}">2.19 预计负债</a></li>
+                                <li><a th:href="@{/FinancialManual#t(fid=1,sid=2)}">2.20 股份支付</a></li>
+                                <li><a th:href="@{/FinancialManual#u(fid=1,sid=2)}">2.21 优先股、永续债等其他金融工具</a></li>
+                                <li><a th:href="@{/FinancialManual#v(fid=1,sid=2)}">2.22 收入</a></li>
+                                <li><a th:href="@{/FinancialManual#w(fid=1,sid=2)}">2.23 政府补助</a></li>
+                                <li><a th:href="@{/FinancialManual#x(fid=1,sid=2)}">2.24 递延所得税资产和递延所得税负债</a></li>
+                                <li><a th:href="@{/FinancialManual#y(fid=1,sid=2)}">2.25 租赁</a></li>
+                                <li><a th:href="@{/FinancialManual#z(fid=1,sid=2)}">2.26 利润分配</a></li>
+                                <li><a th:href="@{/FinancialManual#aa(fid=1,sid=2)}">2.27 会计调整</a></li>
+                                <li><a th:href="@{/FinancialManual#bb(fid=1,sid=2)}">2.28 或有事项</a></li>
+                                <li><a th:href="@{/FinancialManual#cc(fid=1,sid=2)}">2.29 关联方关系及其交易</a></li>
+                                <li><a th:href="@{/FinancialManual#dd(fid=1,sid=2)}">2.30 财务会计报告</a></li>
+                                <li><a th:href="@{/FinancialManual#ee(fid=1,sid=2)}">2.31 非货币性交易</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a th:href="@{/FinancialManual(fid=1,sid=3)}">第三条 科目设置及操作规范索引</a>
+                            <ul class="sub">
+                                <li><a th:href="@{/FinancialManual#a(fid=1,sid=3)}">3.1 科目编码设置原则</a></li>
+                                <li><a th:href="@{/FinancialManual#b(fid=1,sid=3)}">3.2 科目编码、管控原则及操作规范索引</a></li>
+                                <li><a th:href="@{/FinancialManual#c(fid=1,sid=3)}">3.3 会计科目管控原则</a></li>
+                                <li><a th:href="@{/FinancialManual#d(fid=1,sid=3)}">3.4 核算原则</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a th:href="@{/FinancialManual(fid=1,sid=4)}">第四条 会计科目使用操作规范(未完待续)</a>
+                            <ul class="sub">
+                                <li><a th:href="@{/FinancialManual#a(fid=1,sid=4)}">4.1 货币资金</a></li>
+                                <li><a th:href="@{/FinancialManual#b(fid=1,sid=4)}">4.2 应收票据</a></li>
+                                <li><a th:href="@{/FinancialManual#c(fid=1,sid=4)}">4.3 应收账款</a></li>
+                                <li><a th:href="@{/FinancialManual#d(fid=1,sid=4)}">4.4 预付款项</a></li>
+                                <li><a th:href="@{/FinancialManual#e(fid=1,sid=4)}">4.5 应收股利</a></li>
+                                <li><a th:href="@{/FinancialManual#f(fid=1,sid=4)}">4.6 应收利息</a></li>
+                                <li><a th:href="@{/FinancialManual#g(fid=1,sid=4)}">4.7 其他应收款</a></li>
+                                <li><a th:href="@{/FinancialManual#h(fid=1,sid=4)}">4.8 坏账准备</a></li>
+                                <li><a th:href="@{/FinancialManual#i(fid=1,sid=4)}">4.9 存货</a></li>
+                                <li><a th:href="@{/FinancialManual#j(fid=1,sid=4)}">4.10 其他流动资产</a></li>
+                                <li><a th:href="@{/FinancialManual#k(fid=1,sid=4)}">4.11 持有至到期投资</a></li>
+                                <li><a th:href="@{/FinancialManual#l(fid=1,sid=4)}">4.12 可供出售金融资产</a></li>
+                                <li><a th:href="@{/FinancialManual#m(fid=1,sid=4)}">4.13 长期股权投资</a></li>
+                                <li><a th:href="@{/FinancialManual#n(fid=1,sid=4)}">4.14 投资性房地产</a></li>
+                                <li><a th:href="@{/FinancialManual#o(fid=1,sid=4)}">4.15 长期应收款</a></li>
+                                <li><a th:href="@{/FinancialManual#p(fid=1,sid=4)}">4.16 固定资产</a></li>
+                                <li><a th:href="@{/FinancialManual#q(fid=1,sid=4)}">4.17 在建工程</a></li>
+                                <li><a th:href="@{/FinancialManual#r(fid=1,sid=4)}">4.18 工程物资</a></li>
+                                <li><a th:href="@{/FinancialManual#s(fid=1,sid=4)}">4.19 无形资产</a></li>
+                                <li><a th:href="@{/FinancialManual#t(fid=1,sid=4)}">4.20 生产性生物资产</a></li>
+                                <li><a th:href="@{/FinancialManual#u(fid=1,sid=4)}">4.21 长期待摊费用</a></li>
+                                <li><a th:href="@{/FinancialManual#v(fid=1,sid=4)}">4.22 递延所得税资产</a></li>
+                                <li><a th:href="@{/FinancialManual#w(fid=1,sid=4)}">4.23 短期借款</a></li>
+                                <li><a th:href="@{/FinancialManual#x(fid=1,sid=4)}">4.24 交易性金融负债</a></li>
+                                <li><a th:href="@{/FinancialManual#y(fid=1,sid=4)}">4.25 应付票据</a></li>
+                                <li><a th:href="@{/FinancialManual#z(fid=1,sid=4)}">4.26 应付账款</a></li>
+                                <li><a th:href="@{/FinancialManual#aa(fid=1,sid=4)}">4.27 预收账款</a></li>
+                                <li><a th:href="@{/FinancialManual#bb(fid=1,sid=4)}">4.28 应付职工薪酬</a></li>
+                                <li><a th:href="@{/FinancialManual#cc(fid=1,sid=4)}">4.29 应交税费</a></li>
+                                <li><a th:href="@{/FinancialManual#dd(fid=1,sid=4)}">4.30 应付利息</a></li>
+                                <li><a th:href="@{/FinancialManual#ee(fid=1,sid=4)}">4.31 应付股利</a></li>
+                                <li><a th:href="@{/FinancialManual#ff(fid=1,sid=4)}">4.32 其他应付款</a></li>
+                                <li><a th:href="@{/FinancialManual#gg(fid=1,sid=4)}">4.33 应付债券</a></li>
+                                <li><a th:href="@{/FinancialManual#hh(fid=1,sid=4)}">4.34 长期应付款</a></li>
+                                <li><a th:href="@{/FinancialManual#ii(fid=1,sid=4)}">4.35 专项应付款</a></li>
+                                <li><a th:href="@{/FinancialManual#jj(fid=1,sid=4)}">4.36 预计负债</a></li>
+                                <li><a th:href="@{/FinancialManual#kk(fid=1,sid=4)}">4.37 递延所得税负债</a></li>
+                                <li><a th:href="@{/FinancialManual#ll(fid=1,sid=4)}">4.38 股本</a></li>
+                                <li><a th:href="@{/FinancialManual#mm(fid=1,sid=4)}">4.39 资本公积</a></li>
+                                <li><a th:href="@{/FinancialManual#nn(fid=1,sid=4)}">4.40 盈余公积</a></li>
+                                <li><a th:href="@{/FinancialManual#oo(fid=1,sid=4)}">4.41 本年利润</a></li>
+                                <li><a th:href="@{/FinancialManual#pp(fid=1,sid=4)}">4.42 利润分配</a></li>
+                                <li><a th:href="@{/FinancialManual#qq(fid=1,sid=4)}">4.43 库存股</a></li>
+                                <li><a th:href="@{/FinancialManual#rr(fid=1,sid=4)}">4.44 生产成本</a></li>
+                                <li><a th:href="@{/FinancialManual#ss(fid=1,sid=4)}">4.45 制造费用</a></li>
+                                <li><a th:href="@{/FinancialManual#tt(fid=1,sid=4)}">4.46 开发支出</a></li>
+                                <li><a th:href="@{/FinancialManual#uu(fid=1,sid=4)}">4.47 主营业务收入</a></li>
+                                <li><a th:href="@{/FinancialManual#vv(fid=1,sid=4)}">4.48 其他业务收入</a></li>
+                                <li><a th:href="@{/FinancialManual#ww(fid=1,sid=4)}">4.49 其他收益</a></li>
+                                <li><a th:href="@{/FinancialManual#xx(fid=1,sid=4)}">4.50 营业外收入</a></li>
+                                <li><a th:href="@{/FinancialManual#yy(fid=1,sid=4)}">4.51 主营业务成本</a></li>
+                                <li><a th:href="@{/FinancialManual#zz(fid=1,sid=4)}">4.52 其他业务支出</a></li>
+                                <li><a th:href="@{/FinancialManual#aaa(fid=1,sid=4)}">4.53 税金及附加</a></li>
+                                <li><a th:href="@{/FinancialManual#bbb(fid=1,sid=4)}">4.54 公允价值变动损益</a></li>
+                                <li><a th:href="@{/FinancialManual#ccc(fid=1,sid=4)}">4.55 投资收益</a></li>
+                                <li><a th:href="@{/FinancialManual#ddd(fid=1,sid=4)}">4.56 销售费用</a></li>
+                                <li><a th:href="@{/FinancialManual#eee(fid=1,sid=4)}">4.57 管理费用</a></li>
+                                <li><a th:href="@{/FinancialManual#fff(fid=1,sid=4)}">4.58 财务费用</a></li>
+                                <li><a th:href="@{/FinancialManual#ggg(fid=1,sid=4)}">4.59 资产减值损失</a></li>
+                                <li><a th:href="@{/FinancialManual#hhh(fid=1,sid=4)}">4.60 营业外支出</a></li>
+                                <li><a th:href="@{/FinancialManual#iii(fid=1,sid=4)}">4.61 所得税费用</a></li>
+                                <li><a th:href="@{/FinancialManual#jjj(fid=1,sid=4)}">4.62 以前年度损益调整</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a th:href="@{/FinancialManual(fid=1,sid=5)}">第五条 内部控制</a>
+                            <ul class="sub">
+                                <li><a th:href="@{/FinancialManual#a(fid=1,sid=5)}">5.1 内部控制七大循环</a></li>
+                                <li><a th:href="@{/FinancialManual#b(fid=1,sid=5)}">5.2 各循环关键控制点</a></li>
+                                <li><a th:href="@{/FinancialManual#c(fid=1,sid=5)}">5.3 公司各项制度()</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;" class="active">
+                        <i class="icon-laptop"></i>
+                        <span>第二部分:会计基础工作规范</span>
+                    </a>
+                    <ul class="sub">
+                        <li class="sub-menu">
+                            <a th:href="@{/FinancialManual(fid=2,sid=1)}" class="active">第一条 票据类</a>
+                            <ul class="sub">
+                                <li><a th:href="@{/FinancialManual#a(fid=2,sid=1)}">1.1 票据制作规范</a></li>
+                                <li><a th:href="@{/FinancialManual#b(fid=2,sid=1)}">1.2 票据审核规范</a></li>
+                                <li><a th:href="@{/FinancialManual#c(fid=2,sid=1)}">1.3 票据账册装订规范</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a th:href="@{/FinancialManual(fid=2,sid=2)}">第二条 记账凭证制作规范</a>
+                            <ul class="sub">
+                                <li><a th:href="@{/FinancialManual#a(fid=2,sid=2)}">2.1 记账凭证制作规范</a></li>
+                                <li><a th:href="@{/FinancialManual#b(fid=2,sid=2)}">2.2 财务支付及成本费用列支审核规范</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!--sidebar end-->
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
+            <div id='write' class='is-node'><h2><a name='header-n0' class='md-header-anchor '></a>第一条 票据类</h2>
+                <div id='a'><h3><a name='header-n2' class='md-header-anchor '></a>1.1 票据制作规范</h3></div>
+                <h4><a name='header-n3' class='md-header-anchor '></a>1.1.1 取得外来原始单据要求：</h4>
+                <p>
+                    取得外来原始单据必须保证其真实、合法、要素齐全，具体包括：票据本身的真伪，原始单据的名称，填制单据的日期和经济业务发生的日期，填制单位的名称、公章和填制人的姓名，经办人或责任人的签名或盖章，接受单据单位的名称，经济业务的内容、实物数量、单价和金额，从个人取得的原始单据应有填制人员的签名或盖章；有些特殊的原始单据，出于习惯或使用单位认为不易伪造，则不加盖公章，但应有固定的特殊标志，如飞机票、火车票、汽车票等。</p>
+                <h4><a name='header-n6' class='md-header-anchor '></a>1.1.2 自制原始单据的填制要求：</h4>
+                <p>反映的经济业务必须真实可靠；自制原始单据必须有经办单位负责人或指定的人员签名盖章，对外开出的原始单据，必须加盖单位公章；填制内容准确完整；填制及时、书写清楚。</p><h4><a
+                        name='header-n9' class='md-header-anchor '></a>1.1.3 原始单据的附加要求：</h4>
+                <p>凡填有大写或小写金额的原始单据，大写和小写金额必须相符；购买实物的原始单据，必须有验收或收到证明；支付款项的原始单据，必须有收款单位和收款人的收款证明以及相应领导批准支付的签章；<br/></p><h4><a
+                        name='header-n12' class='md-header-anchor '></a>1.1.4 票据粘贴规范：</h4>
+                <ol start=''>
+                    <li>在粘贴单上，自右向左正面向上依次分类均匀粘贴，粘贴时不能覆盖票据内容，右边不能超出粘贴单长度，左边不能超过装订线，上下不能超过粘贴宽度，票据较大时，应当整齐折叠。</li>
+                    <li>粘贴后，上附报销审批单，审批单上应注明：报销内容、单据张数、合计金额等内容。</li>
+                    <li>票据较多时，应分页粘贴。</li>
+                </ol>
+                <p>发票查询网站<a href='https://inv-veri.chinatax.gov.cn' target='_blank' class='url'>https://inv-veri.chinatax.gov.cn</a>/
+                </p>
+                <div id='b'><h3><a name='header-n25' class='md-header-anchor '></a>1.2 票据审核规范</h3></div>
+                <p>真实性和完整性复核，包括以下内容：</p>
+                <ol start=''>
+                    <li>经济业务的当事单位和当事人必须是真实的。包括出具原始单据的单位，接收单据的单位，填制原始单据的责任人，取得原始凭证的责任人都要据实填写。</li>
+                    <li>经济业务发生的时间、地点和填制凭证的日期必须是真实的。</li>
+                    <li>经济业务的内容必须是真实的。</li>
+                    <li>经济业务的量必须是真实的。</li>
+                    <li>原始凭证应具备的要素必须是完整的。</li>
+                </ol>
+                <p>合法性复核：就是要按会计法规、会计制度和计划预算办事。复核单据所反映的经济业务是否合法合规，是否符合有关政策、制度的规定和计划要求，是否符合审批权限和手续。</p>
+                <div id='c'><h3><a name='header-n46' class='md-header-anchor '></a>1.3 票据账册装订规范</h3></div>
+                <h4><a name='header-n47' class='md-header-anchor '></a>1.3.1 会计凭证的装订：</h4>
+                <ol start=''>
+                    <li>会计凭证应每月10号前装订，按年分月妥善保管归档。</li>
+                    <li>会计凭证装订前的准备工作：</li>
+                </ol>
+                <p>分类整理，按顺序排列，检查日期、编号是否齐全；</p>
+                <p>摘除凭证内的订书钉、大头针、回形针，对大的张页或附件要折叠成同记账凭证大小，且要避开装订线。</p>
+                <p>整理检查凭证顺序号，如有颠倒要重新排列，发现缺号要查明原因并在编号单上注明。检查附件有否漏缺。</p>
+                <p>记账凭证上的印章是否齐全。</p>
+                <p>科目汇总表和编号单要装订在第一本凭证的首页。</p><h4><a name='header-n65' class='md-header-anchor '></a>1.3.2 会计凭证装订的要求：</h4>
+                <p>用“三针引线法”装订;</p>
+                <p>凭证外面应加牛皮纸封面，封面规格略大于记账凭证；</p>
+                <p>每本封面上填写好凭证种类、凭证编号、起止号码、会计主管和装订人员签章。</p>
+                <p>装订好的凭证背面线结处粘贴封签并加盖财务主管印章。</p><h4><a name='header-n74' class='md-header-anchor '></a>1.3.3 会计账簿的装订：</h4>
+                <p>年度结账完成后，打印会计账簿，会计账簿必须连续编号，经审核无误后，加牛皮纸封面，装订成册。</p><h4><a name='header-n77' class='md-header-anchor '></a>1.3.4
+                    会计报表的装订：</h4>
+                <p>会计报表装订前要按编报目录核对是否齐全；</p>
+                <p>会计报表装订顺序为：会计报表封面、按会计报表的编号顺序排列的报表、会计报表编报说明（附注）、会计报表的封底。</p><h4><a name='header-n82'
+                                                                                    class='md-header-anchor '></a>1.3.5
+                    台账、分析的装订：</h4>
+                <p>每月15号前，应打印上月台账和经营分析，并加盖封面，装订成册。 <br/></p><h4><a name='header-n85' class='md-header-anchor '></a>1.3.6
+                    银行对账单及余额调节表等装订</h4>
+                <p>每月进行银行对账并编制银行存款余额调节表后，装订成册，装订顺序为：月度银行存款余额调节表，银行对账单。发生业务较多的单位应分行装订，业务较少的可合并装订。</p>
+                <p>每年结束，应将银行对账单及余额调节表按月份顺序装订。</p><h4><a name='header-n90' class='md-header-anchor '></a>1.3.7 各类税务资料的装订</h4>
+                <ol start=''>
+                    <li>取得的外部增值税发票、运输发票每25份装订一本；收购发票存根联和抵扣联每月分联次按票号顺序装订保存，不准混订、跨月装订。并准确填写封面内容。</li>
+                    <li>增值税一般纳税人每年按月份顺序，装订增值税纳税申报表及其附列资料和附表，使用税务机关专用封面。</li>
+                    <li>企业所得税申报资料每年按季度顺序装订，装订顺序为：所得税纳税申报表、附列资料、年度所得税汇算清缴表。</li>
+                    <li>其他税收纳税申报表报表每年按月份顺序分别装订。</li>
+                </ol>
+            </div>
+            <!-- page end-->
+        </section>
+    </section>
+    <!--main content end-->
+</section>
+
+<script src="res/js/jquery.js"></script>
+<script src="res/js/bootstrap.min.js"></script>
+<script class="include" type="text/javascript" src="res/js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="res/js/jquery.scrollTo.min.js"></script>
+<script src="res/js/jquery.nicescroll.js" type="text/javascript"></script>
+<script src="res/js/respond.min.js"></script>
+<script src="res/js/common-scripts.js"></script>
+</body>
+</html>

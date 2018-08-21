@@ -20,8 +20,8 @@ public class LoginController {
         return "login";
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public String login(Model model, String name, String password,Boolean rememberMe) {
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String login(Model model, String name, String password, Boolean rememberMe) {
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(name, password, rememberMe == null ? false : rememberMe);
         try {
