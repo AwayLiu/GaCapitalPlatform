@@ -184,30 +184,16 @@ var EditableTable = function () {
                     // var jsonArr=createJson(o1,max);
                     var obj = JSON.parse(JSON.stringify(createJson(o1, max)));
 
-                    //是否存在交易时间
-                    var isdate = false;
-                    var istime = false;
-                    for (var key in obj[0]) {
-                        if (key.indexOf("交易日") != -1) {
-                            isdate = true;
-                        } else if (key.indexOf("交易时间") != -1) {
-                            istime = true;
-                        }
-                    }
                     //排序
-                    obj = sortArray(obj, isdate, istime);
+                    obj = sortArray(obj);
                     //计算总额
                     amountMoney(obj);
 
                     for (var i = 0; i < obj.length; i++) {
                         var m = new Map();
                         for (var key in obj[i]) {
-                            if (key.indexOf('交易日') != -1) {
+                            if (key.indexOf('交易时间') != -1) {
                                 m.set("tradeDate", formatDate(obj[i][key]));
-                            } else if (key.indexOf('交易时间') != -1) {
-                                if (!isdate && istime) {
-                                    m.set("tradeDate", formatDate(obj[i][key]));
-                                }
                             } else if (key.indexOf('余额') != -1) {
                                 m.set("balance", obj[i][key]);
                             } else if (key.indexOf('借方') != -1 ||
@@ -216,16 +202,11 @@ var EditableTable = function () {
                             } else if (key.indexOf('贷方') != -1 ||
                                 key.indexOf('支出') != -1) {
                                 m.set("credit", obj[i][key]);
-                            } else if (key.indexOf('对方账号') != -1 ||
-                                key.indexOf('收/付方帐号') != -1) {
+                            } else if (key.indexOf('对方账号') != -1 ) {
                                 m.set("accnum", obj[i][key]);
-                            } else if (key.indexOf('对方户名') != -1 ||
-                                key.indexOf('对方账号名称') != -1 ||
-                                key.indexOf('对方单位名称') != -1 ||
-                                key.indexOf('收/付方名称') != -1) {
+                            } else if (key.indexOf('对方户名') != -1 ) {
                                 m.set("accname", obj[i][key]);
-                            } else if (key == '摘要' || key == '摘要内容' ||
-                                key == '交易附言' || key == '交易用途') {
+                            } else if (key.indexOf('交易摘要') != -1) {
                                 m.set("summary", obj[i][key]);
                             }
                         }
@@ -305,12 +286,7 @@ var EditableTable = function () {
                         for (var b = 0; b < data[a].length; b++) {
                             if (typeof (data[a][b]) != "undefined") {
                                 //去除读取到的文本中多余的空格符
-                                if ((data[a][b].toString().replace(/\s+/g, "") == "账户" ||
-                                        data[a][b].toString().replace(/\s+/g, "") == "账号" ||
-                                        data[a][b].toString().replace(/\s+/g, "") == "账户:" ||
-                                        data[a][b].toString().replace(/\s+/g, "") == "账号:" ||
-                                        data[a][b].toString().replace(/\s+/g, "") == "银行账号"||
-                                        data[a][b].toString().replace(/\s+/g, "") == "查询账号:")) {
+                                if (data[a][b].toString().replace(/\s+/g, "") == "账号:" ) {
                                     var step = 1;
                                     while (step<5) {
                                         if (typeof (data[a][b + step]) != "undefined") {
@@ -357,35 +333,20 @@ var EditableTable = function () {
                 return true;
             }
 
-            function sortArray(array,isdate,istime) {
+            //排序
+            function sortArray(array) {
                 var firstDate, lastDate;
-                if (isdate) {
-                    for (var key in array[0]) {
-                        if (key.indexOf('交易日') != -1) {
-                            firstDate = array[0][key];
-                            break;
-                        }
+
+                for (var key in array[0]) {
+                    if (key.indexOf('交易时间') != -1) {
+                        firstDate = array[0][key];
+                        break;
                     }
-                    for (var key in array[array.length - 1]) {
-                        if (key.indexOf('交易日') != -1) {
-                            lastDate = array[array.length - 1][key];
-                            break;
-                        }
-                    }
-                } else {
-                    if (!isdate && istime) {
-                        for (var key in array[0]) {
-                            if (key.indexOf('交易时间') != -1) {
-                                firstDate = array[0][key];
-                                break;
-                            }
-                        }
-                        for (var key in array[array.length - 1]) {
-                            if (key.indexOf('交易时间') != -1) {
-                                lastDate = array[array.length - 1][key];
-                                break;
-                            }
-                        }
+                }
+                for (var key in array[array.length - 1]) {
+                    if (key.indexOf('交易时间') != -1) {
+                        lastDate = array[array.length - 1][key];
+                        break;
                     }
                 }
 

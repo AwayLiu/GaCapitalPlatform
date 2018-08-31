@@ -16,16 +16,21 @@
     <link href="res/css/style.css" rel="stylesheet">
     <link href="res/css/style-responsive.css" rel="stylesheet"/>
 
+    <!--<script src="http://rescdn.qqmail.com/node/ww/wwopenmng/js/sso/wwLogin-1.0.0.js" type="text/javascript" charset="utf-8"></script>-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
     <script src="res/js/html5shiv.js"></script>
     <script src="res/js/respond.min.js"></script>
     <![endif]-->
+    <!--<style>-->
+        <!--#wx_reg{ margin: 150px auto 0; width:320px; height:320px; }-->
+    <!--</style>-->
 </head>
 
 <body class="login-body">
 
 <div class="container">
+    <!--<div id="wx_reg"></div>-->
     <form class="form-signin" method="post"  th:action="@{/login}">
         <h2 class="form-signin-heading">欢迎登录广安资金管理平台</h2>
         <div class="login-wrap">
@@ -61,6 +66,17 @@
         <!-- modal -->
     </form>
 </div>
+
+<!--<script>-->
+    <!--window.WwLogin({-->
+        <!--"id" : "wx_reg",-->
+        <!--"appid" : "ww3087a4414f006b55",-->
+        <!--"agentid" : "1000022",-->
+        <!--"redirect_uri" :encodeURI("http://172.20.10.5:9999/login"),-->
+        <!--"state" : "3828293919281",-->
+        <!--"href" : "",-->
+    <!--});-->
+<!--</script>-->
 <!-- js placed at the end of the document so the pages load faster -->
 <script src="res/js/jquery.js"></script>
 <script src="res/js/bootstrap.min.js"></script>

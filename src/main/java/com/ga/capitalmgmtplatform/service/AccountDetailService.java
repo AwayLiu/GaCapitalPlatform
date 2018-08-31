@@ -12,6 +12,8 @@ public interface AccountDetailService {
 
     int add(List<AccountDetail> list);
 
+    AccountDetail getLastDetailByAccnum(@Param("accNum") String accNum);
+
     List<AccountDetail> getDetailsByDateAndAccnum(@Param("date") String date, @Param("accNum") String accNum);
 
     List<AccountDetail> getDetailsByDatesAndAccnum(@Param("dtFrom") String dtFrom, @Param("dtTo") String dtTo, @Param("accNum") String accNum);

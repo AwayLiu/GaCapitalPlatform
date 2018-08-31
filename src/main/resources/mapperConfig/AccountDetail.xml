@@ -29,6 +29,10 @@
             )
         </foreach>
     </insert>
+
+    <select id="getLastDetailByAccnum" resultType="com.ga.capitalmgmtplatform.pojo.AccountDetail">
+        select * from accountdetail where accnum=#{accNum} order by id desc limit 1
+    </select>
     
     <select id="getDetailsByDateAndAccnum" resultType="com.ga.capitalmgmtplatform.pojo.AccountDetail">
         select * from accountdetail where transdate=#{date} and accnum=#{accNum}

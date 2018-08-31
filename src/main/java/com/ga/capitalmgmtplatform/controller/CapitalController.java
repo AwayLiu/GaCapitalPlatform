@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
+import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -19,10 +21,27 @@ public class CapitalController {
     @Autowired
     private AccountDetailService detailService;
 
-    @RequestMapping("/DetailInput/AddDetails")
+    @RequestMapping(value = "/CapitalDetail", method = RequestMethod.POST)
     @ResponseBody
     public String AddDetails(HttpServletResponse response, @RequestBody AccDetailDtDao[] details) throws Exception {
-        List<AccountDetail> list=new ArrayList<>();
+        DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        AccDetailDtDao first=details[0];
+        AccountDetail last=detailService.getLastDetailByAccnum(first.getAccNum());
+        if(last!=null){
+            if(format1.parse(last.getTransDate()).compareTo(format1.parse(first.getTransDate()))>0){
+                return "导入失败,您当前导入记录的交易时间早于已有记录的交易时间,请修改后再次尝试导入!";
+            }
+
+            BigDecimal nowBalance=new BigDecimal(first.getBalance());
+            BigDecimal nowCredit=new BigDecimal(first.getCreditAmount());
+            BigDecimal nowDebit=new BigDecimal(first.getDebitAmount());
+
+            if ((last.getBalance().add(nowCredit).subtract(nowDebit)) != nowBalance) {
+                return "导入失败,您当前导入的记录与后台已有记录之间存在缺失,请补充后再次尝试导入!";
+            }
+        }
+
+        List<AccountDetail> list = new ArrayList<>();
         DecimalFormat df = new DecimalFormat("###,###.00");
         for (AccDetailDtDao detail : details) {
             AccountDetail tmp = new AccountDetail();
@@ -47,13 +66,14 @@ public class CapitalController {
         return "导入成功";
     }
 
-    @RequestMapping(value = "/DetailQuery/QueryDetails",method = RequestMethod.POST)
-    public @ResponseBody List<AccountDetail>  QueryDetails(@RequestBody Map<String,String> map) throws Exception {
+    @RequestMapping(value = "/CapitalDetail", method = RequestMethod.GET)
+    public @ResponseBody
+    List<AccountDetail> QueryDetails(HttpServletRequest request) throws Exception {
         List<AccountDetail> list = new ArrayList<>();
-        String date = map.get("date");
-        String accnum = map.get("accnum");
+        String date = request.getParameter("date");
+        String accnum = request.getParameter("accnum");
 
-        if(date!="") {
+        if (date != "") {
             SimpleDateFormat format1 = new SimpleDateFormat("MM-dd-yyyy");
             SimpleDateFormat format2 = new SimpleDateFormat("yyyy-MM-dd");
             Date date1 = format1.parse(date);
@@ -64,12 +84,13 @@ public class CapitalController {
         return list;
     }
 
-    @RequestMapping(value = "/DetailQuery/TotalQueryDetails",method = RequestMethod.POST)
-    public @ResponseBody List<AccountDetail> TotalQueryDetails(@RequestBody Map<String,String> map) throws Exception {
+    @RequestMapping(value = "/CapitalDetails", method = RequestMethod.GET)
+    public @ResponseBody
+    List<AccountDetail> TotalQueryDetails(HttpServletRequest request) throws Exception {
         List<AccountDetail> list = new ArrayList<>();
-        String dtFrom = map.get("dtFrom");
-        String dtTo = map.get("dtTo");
-        String accnum = map.get("accnum");
+        String dtFrom = request.getParameter("dtFrom");
+        String dtTo = request.getParameter("dtTo");
+        String accnum = request.getParameter("accnum");
 
         SimpleDateFormat format1 = new SimpleDateFormat("MM/dd/yyyy");
         SimpleDateFormat format2 = new SimpleDateFormat("yyyy-MM-dd");

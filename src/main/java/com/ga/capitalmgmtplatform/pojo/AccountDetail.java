@@ -73,7 +73,6 @@ public class AccountDetail {
 //        return df.format(balance);
 //    }
     public BigDecimal getBalance() {
-        DecimalFormat df = new DecimalFormat("###,###.000");
         return balance;
     }
 

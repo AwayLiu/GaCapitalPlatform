@@ -37,152 +37,6 @@
         <a href="index.html" class="logo"><span>资金台账明细查询</span></a>
         <!--logo end-->
         <div class="nav notify-row" id="top_menu">
-            <!--  notification start -->
-            <!--<ul class="nav top-menu">
-                &lt;!&ndash; 设置 start &ndash;&gt;
-                <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <i class="icon-tasks"></i>
-                        <span class="badge bg-success">6</span>
-                    </a>
-                    <ul class="dropdown-menu extended tasks-bar">
-                        <div class="notify-arrow notify-arrow-green"></div>
-                        <li>
-                            <p class="green">You have 6 pending tasks</p>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="task-info">
-                                    <div class="desc">Dashboard v1.3</div>
-                                    <div class="percent">40%</div>
-                                </div>
-                                <div class="progress progress-striped">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                        <span class="sr-only">40% Complete (success)</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="task-info">
-                                    <div class="desc">Database Update</div>
-                                    <div class="percent">60%</div>
-                                </div>
-                                <div class="progress progress-striped">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                        <span class="sr-only">60% Complete (warning)</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="task-info">
-                                    <div class="desc">Iphone Development</div>
-                                    <div class="percent">87%</div>
-                                </div>
-                                <div class="progress progress-striped">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: 87%">
-                                        <span class="sr-only">87% Complete</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="task-info">
-                                    <div class="desc">Mobile App</div>
-                                    <div class="percent">33%</div>
-                                </div>
-                                <div class="progress progress-striped">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: 33%">
-                                        <span class="sr-only">33% Complete (danger)</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="task-info">
-                                    <div class="desc">Dashboard v1.3</div>
-                                    <div class="percent">45%</div>
-                                </div>
-                                <div class="progress progress-striped active">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0"
-                                         aria-valuemax="100" style="width: 45%">
-                                        <span class="sr-only">45% Complete</span>
-                                    </div>
-                                </div>
-
-                            </a>
-                        </li>
-                        <li class="external">
-                            <a href="#">See All Tasks</a>
-                        </li>
-                    </ul>
-                </li>
-                &lt;!&ndash; 设置 end &ndash;&gt;
-
-                &lt;!&ndash; 通知 start&ndash;&gt;
-                <li id="header_notification_bar" class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-
-                        <i class="icon-bell-alt"></i>
-                        <span class="badge bg-warning">7</span>
-                    </a>
-                    <ul class="dropdown-menu extended notification">
-                        <div class="notify-arrow notify-arrow-yellow"></div>
-                        <li>
-                            <p class="yellow">You have 7 new notifications</p>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="label label-danger"><i class="icon-bolt"></i></span>
-                                Server #3 overloaded.
-                                <span class="small italic">34 mins</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="label label-warning"><i class="icon-bell"></i></span>
-                                Server #10 not respoding.
-                                <span class="small italic">1 Hours</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="label label-danger"><i class="icon-bolt"></i></span>
-                                Database overloaded 24%.
-                                <span class="small italic">4 hrs</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="label label-success"><i class="icon-plus"></i></span>
-                                New user registered.
-                                <span class="small italic">Just now</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="label label-info"><i class="icon-bullhorn"></i></span>
-                                Application error.
-                                <span class="small italic">10 mins</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">See all notifications</a>
-                        </li>
-                    </ul>
-                </li>
-                &lt;!&ndash; 通知 dropdown end &ndash;&gt;
-            </ul>-->
-            <!--  notification end -->
         </div>
         <div class="top-nav ">
             <!--search & user info start-->
@@ -190,15 +44,14 @@
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <!--<img alt="" src="img/avatar1_small.jpg">-->
                         <span class="username" th:text="${u}"></span>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
                         <div class="log-arrow-up"></div>
-                        <!--<li><a href="#"><i class=" icon-suitcase"></i>Profile</a></li>-->
-                        <!--<li><a href="#"><i class="icon-cog"></i> Settings</a></li>-->
-                        <!--<li><a href="#"><i class="icon-bell-alt"></i> Notification</a></li>-->
+                        <li><a th:href="@{/FinancialManual(fid=1,sid=1)}"><i class=" icon-tasks"></i>财务管理手册</a></li>
+                        <li><a href="#"><i class=" icon-download-alt"></i>明细模板下载</a></li>
+                        <li><a href="#"><i class=" icon-cog"></i>设置</a></li>
                         <li><a href="doLogout"><i class="icon-key"></i> 退出</a></li>
                     </ul>
                 </li>
@@ -228,9 +81,9 @@
                         <span>资金台账</span>
                     </a>
                     <ul class="sub">
-                        <li><a th:href="@{/DetailInput}">资金台账录入</a></li>
-                        <li class="active"><a th:href="@{/DetailQuery}">资金台账查询</a></li>
-                        <li><a th:href="@{/DetailTotalQuery}">资金台账汇总查询</a></li>
+                        <li><a th:href="@{/CapitalDetailInput}">资金台账录入</a></li>
+                        <li class="active"><a th:href="@{/CapitalDetailQuery}">资金台账查询</a></li>
+                        <li><a th:href="@{/CapitalDetailTotalQuery}">资金台账汇总查询</a></li>
                     </ul>
                 </li>
                 <!--资金台账 end-->
@@ -242,9 +95,9 @@
                 <!--<span>资金预算</span>-->
                 <!--</a>-->
                 <!--<ul class="sub">-->
-                <!--<li><a  th:href="@{/BudgetInput}">资金预算录入</a></li>-->
-                <!--<li><a  th:href="@{/BudgetQuery}">资金预算明细查询</a></li>-->
-                <!--<li><a  th:href="@{/BudgetTotalQuery}">资金预算汇总查询</a></li>-->
+                <!--<li><a  th:href="@{/CapitalBudgetInput}">资金预算录入</a></li>-->
+                <!--<li><a  th:href="@{/CapitalBudgetQuery}">资金预算明细查询</a></li>-->
+                <!--<li><a  th:href="@{/CapitalBudgetTotalQuery}">资金预算汇总查询</a></li>-->
                 <!--</ul>-->
                 <!--</li>-->
                 <!--资金预算 end-->
@@ -391,9 +244,9 @@
             var accNum = $('#sltAccName option:selected').text();
 
             $.ajax({
-                type: "POST",
-                url: "/DetailQuery/QueryDetails",
-                data: JSON.stringify({'date': date, 'accnum': accNum}),
+                type: "GET",
+                url: "/CapitalDetail",
+                data: {'date': date, 'accnum': accNum},
                 dataType: "json",
                 contentType: "application/json",
                 async: false,

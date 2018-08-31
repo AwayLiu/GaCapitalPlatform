@@ -34,8 +34,14 @@ public class AccountBalanceInfo {
         this.lastNum = lastNum;
     }
 
-    public BigDecimal  getBalance() {
+    public BigDecimal getDecimalBalance() {
         return balance;
+    }
+
+    public String getBalance() {
+        DecimalFormat df = new DecimalFormat("###,##0.000");
+        String result = balance == null ? null : df.format(balance);
+        return result;
     }
 
     public void setBalance(BigDecimal balance) {

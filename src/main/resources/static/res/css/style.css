@@ -54,6 +54,10 @@ a, a:hover, a:focus {
     -webkit-border-radius: 5px;
 }
 
+/*.wx-signin {*/
+    /*margin: 150px auto 0; width:320px; height:320px;*/
+/*}*/
+
 .form-signin h2.form-signin-heading {
     margin: 0;
     padding:20px 15px;

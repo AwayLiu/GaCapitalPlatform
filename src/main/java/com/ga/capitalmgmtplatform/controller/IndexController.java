@@ -42,7 +42,7 @@ public class IndexController {
         DecimalFormat df = new DecimalFormat("###,##0.000");
         for (AccountBalanceInfo info : listBalance) {
             if (info.getBalance() != null) {
-                total = total.add(info.getBalance());
+                total = total.add(info.getDecimalBalance());
             }
         }
         model.addAttribute("listBalance", listBalance);
@@ -51,22 +51,22 @@ public class IndexController {
         return "index";
     }
 
-    @RequestMapping("/BudgetQuery")
+    @RequestMapping("/CapitalBudgetQuery")
     public String BudgetQuery(Model m){
         return "capitalBudgetDetailQuery";
     }
 
-    @RequestMapping("/BudgetInput")
+    @RequestMapping("/CapitalBudgetInput")
     public String BudgetInput(Model m){
         return "capitalBudgetInput";
     }
 
-    @RequestMapping("/BudgetTotalQuery")
+    @RequestMapping("/CapitalBudgetTotalQuery")
     public String BudgetTotalQuery(Model m){
         return "capitalBudgetTotalQuery";
     }
 
-    @RequestMapping("/DetailQuery")
+    @RequestMapping("/CapitalDetailQuery")
     public String CapitalDetailQuery(Model m,String acc) {
         //获取当前用户名
         String name = SecurityUtils.getSubject().getPrincipal().toString();
@@ -85,7 +85,7 @@ public class IndexController {
         return "capitalDetailQuery";
     }
 
-    @RequestMapping("/DetailInput")
+    @RequestMapping("/CapitalDetailInput")
     public String CapitalDetailInput(Model m) {
         //获取当前用户名
         String name = SecurityUtils.getSubject().getPrincipal().toString();
@@ -101,7 +101,7 @@ public class IndexController {
         return "capitalDetailInput";
     }
 
-    @RequestMapping("/DetailTotalQuery")
+    @RequestMapping("/CapitalDetailTotalQuery")
     public String CapitalDetailTotalQuery(Model m){
         //获取当前用户名
         String name = SecurityUtils.getSubject().getPrincipal().toString();

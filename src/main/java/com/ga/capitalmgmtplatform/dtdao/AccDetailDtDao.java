@@ -51,7 +51,7 @@ public class AccDetailDtDao {
     }
 
     public String getDebitAmount() {
-        return debitAmount;
+        return debitAmount == "" ? "0.0" : debitAmount.trim();
     }
 
     public void setDebitAmount(String debitAmount) {
@@ -59,7 +59,7 @@ public class AccDetailDtDao {
     }
 
     public String getCreditAmount() {
-        return creditAmount;
+        return creditAmount == "" ? "0.0" : creditAmount.trim();
     }
 
     public void setCreditAmount(String creditAmount) {
@@ -67,7 +67,7 @@ public class AccDetailDtDao {
     }
 
     public String getBalance() {
-        return balance;
+        return balance == "" ? "0.0" : balance.trim();
     }
 
     public void setBalance(String balance) {

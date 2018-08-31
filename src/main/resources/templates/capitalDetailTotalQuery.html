@@ -192,9 +192,9 @@
                     </a>
                     <ul class="dropdown-menu extended logout">
                         <div class="log-arrow-up"></div>
-                        <!--<li><a href="#"><i class=" icon-suitcase"></i>Profile</a></li>-->
-                        <!--<li><a href="#"><i class="icon-cog"></i> Settings</a></li>-->
-                        <!--<li><a href="#"><i class="icon-bell-alt"></i> Notification</a></li>-->
+                        <li><a th:href="@{/FinancialManual(fid=1,sid=1)}"><i class=" icon-tasks"></i>财务管理手册</a></li>
+                        <li><a href="#"><i class=" icon-download-alt"></i>明细模板下载</a></li>
+                        <li><a href="#"><i class=" icon-cog"></i>设置</a></li>
                         <li><a href="doLogout"><i class="icon-key"></i> 退出</a></li>
                     </ul>
                 </li>
@@ -224,9 +224,9 @@
                         <span>资金台账</span>
                     </a>
                     <ul class="sub">
-                        <li><a  th:href="@{/DetailInput}">资金台账录入</a></li>
-                        <li><a  th:href="@{/DetailQuery}">资金台账查询</a></li>
-                        <li class="active"><a  th:href="@{/DetailTotalQuery}">资金台账汇总查询</a></li>
+                        <li><a  th:href="@{/CapitalDetailInput}">资金台账录入</a></li>
+                        <li><a  th:href="@{/CapitalDetailQuery}">资金台账查询</a></li>
+                        <li class="active"><a  th:href="@{/CapitalDetailTotalQuery}">资金台账汇总查询</a></li>
                     </ul>
                 </li>
                 <!--资金台账 end-->
@@ -238,9 +238,9 @@
                         <!--<span>资金预算</span>-->
                     <!--</a>-->
                     <!--<ul class="sub">-->
-                        <!--<li><a  th:href="@{/BudgetInput}">资金预算录入</a></li>-->
-                        <!--<li><a  th:href="@{/BudgetQuery}">资金预算明细查询</a></li>-->
-                        <!--<li><a  th:href="@{/BudgetTotalQuery}">资金预算汇总查询</a></li>-->
+                        <!--<li><a  th:href="@{/CapitalBudgetInput}">资金预算录入</a></li>-->
+                        <!--<li><a  th:href="@{/CapitalBudgetQuery}">资金预算明细查询</a></li>-->
+                        <!--<li><a  th:href="@{/CapitalBudgetTotalQuery}">资金预算汇总查询</a></li>-->
                     <!--</ul>-->
                 <!--</li>-->
                 <!--资金预算 end-->
@@ -392,9 +392,9 @@
             var accNum = $('#sltAccName option:selected').text();
 
             $.ajax({
-                type: "POST",
-                url: "/DetailQuery/TotalQueryDetails",
-                data: JSON.stringify({'dtFrom': dtFrom, 'dtTo': dtTo, 'accnum': accNum}),
+                type: "GET",
+                url: "/CapitalDetails",
+                data: {'dtFrom': dtFrom, 'dtTo': dtTo, 'accnum': accNum},
                 dataType: "json",
                 contentType: "application/json",
                 async: false,

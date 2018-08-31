@@ -19,4 +19,6 @@ public interface AccountDetailDao {
     List<AccountDetail> getDetailsByDatesAndAccnum(@Param("dtFrom") String dtFrom, @Param("dtTo") String dtTo, @Param("accNum") String accNum);
 
     List<AccountBalanceInfo> getBalanceDetailsByUserId(@Param("id") Long id);
+
+    AccountDetail getLastDetailByAccnum(@Param("accNum") String accNum);
 }

@@ -20,6 +20,12 @@ public class AccountDetailServiceImpl implements AccountDetailService{
     }
 
     @Override
+    public AccountDetail getLastDetailByAccnum(String accNum) {
+        AccountDetail result=detailDao.getLastDetailByAccnum(accNum);
+        return result;
+    }
+
+    @Override
     public List<AccountDetail> getDetailsByDateAndAccnum(String date, String accNum) {
         List<AccountDetail> list;
         if(date==""){
