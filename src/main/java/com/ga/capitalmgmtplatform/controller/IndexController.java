@@ -122,7 +122,6 @@ public class IndexController {
         return "403";
     }
 
-
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String FirstPage(Model m) throws Exception {
         return "login";

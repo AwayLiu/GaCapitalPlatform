@@ -15,11 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class LoginController {
 
-    @RequestMapping("/")
-    public String FirstPage() throws Exception {
-        return "login";
-    }
-
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(Model model, String name, String password, Boolean rememberMe) {
         Subject subject = SecurityUtils.getSubject();
